@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTasks</title>
+    <script src="js/helper.js"></script>
+    <script src="js/tasks.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <h1>MyTasks</h1>
+
+    <div id="commands_section">
+        <div>
+            <input type="text" id="task_input_add"/>
+            <button id="add_task_button" onclick="addTask()">+</button>
+        </div>
+        <div>
+            <button onclick="pauseTask()">=</button>
+        </div>
+    </div>
+
+
+    <main>
+        <table border="1" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Ação</th>
+                    <th>Histórico</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </main>
+    
+</body>
+</html>

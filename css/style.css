@@ -1,0 +1,8 @@
+td {
+    text-align: center;
+}
+
+div#commands_section {
+    display: flex;
+    justify-content: space-between;
+}
