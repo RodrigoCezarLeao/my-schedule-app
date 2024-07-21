@@ -26,3 +26,19 @@ const getCurrentUserIdentifyer = () => {
     const user = localStorage.getItem("MyTask_user")
     return JSON.parse(user)?.identifyer;
 }
+
+function createDateFromTimeString(timeString) {
+    // Obter a data atual
+    const currentDate = new Date();
+    
+    // Extrair a parte da data no formato YYYY-MM-DD
+    const datePart = currentDate.toISOString().split('T')[0];
+    
+    // Combinar a parte da data com a string de horas
+    const dateTimeString = `${datePart}T${timeString}`;
+    
+    // Criar um objeto Date usando a string completa de data e hora
+    const dateTime = new Date(dateTimeString);
+    
+    return dateTime;
+}

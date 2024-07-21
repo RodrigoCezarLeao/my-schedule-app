@@ -12,13 +12,15 @@
 
     <h1>MyTasks</h1>
 
+    <input type="date" id="input_date" onchange="changeDate()"/>
+
     <div id="commands_section">
         <div>
             <input type="text" id="task_input_add"/>
             <button id="add_task_button" onclick="addTask()">+</button>
         </div>
         <div>
-            <button onclick="pauseTask()">=</button>
+            <button onclick="pauseTask()" id="pause_button" disabled>=</button>
         </div>
     </div>
 
@@ -30,6 +32,8 @@
                     <th>Título</th>
                     <th>Ação</th>
                     <th>Histórico</th>
+                    <th style="display: none;"></th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody id="tbody">
@@ -38,5 +42,8 @@
         </table>
     </main>
     
+    <script>
+        document.getElementById("input_date").value = getCurrentDayStr()
+    </script>
 </body>
 </html>
