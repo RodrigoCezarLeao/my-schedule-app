@@ -42,3 +42,19 @@ function createDateFromTimeString(timeString) {
     
     return dateTime;
 }
+
+const diffBetweenTimestampsIntraDay = (ts1 = "00:00:00", ts2 = "23:59:59") => {
+    const baseDate = "1970-01-01T"
+
+    const diff = new Date(Math.abs(new Date(baseDate + ts2 + "Z") -  new Date(baseDate + ts1  + "Z")))
+    const hours = diff.getUTCHours()
+    const minutes = diff.getUTCMinutes()
+    const seconds = diff.getUTCSeconds()
+
+    const hoursStr = hours ? hours.toString().padStart(2, "0") : ""
+    const minutesStr = minutes ? minutes.toString().padStart(2, "0") : ""
+    const secondsStr = seconds ? seconds.toString().padStart(2, "0") : ""
+
+    const finalStr = `${hoursStr ? hoursStr + "h" : ""}${minutesStr ? minutesStr + "min " : ""}${secondsStr ? secondsStr + "s" : ""}`
+    return finalStr
+}
